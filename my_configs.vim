@@ -7,4 +7,5 @@
 "endtry
 
 " 设置使用的ctags
-set tags=/usr/include/tags
+set tags=${MY_KERNEL}/tags,${CALIDUS_ROOT_DIR}/tags,/usr/include/tags
+

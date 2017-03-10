@@ -45,7 +45,7 @@ if has("gui_running")
     colorscheme gruvbox
 else
     " colorscheme desert
-    colorscheme gruvbox
+    colorscheme evening
     " let g:colors_name="desert"
 endif
 
@@ -113,14 +113,15 @@ imap ½ $
 "inoremap $q ''<esc>i
 "inoremap $e ""<esc>i
 "
-inoremap ( ()<ESC>i
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap { {<CR>}<ESC>O
-inoremap } <c-r>=ClosePair('}')<CR>
-inoremap [ []<ESC>i
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
+ inoremap ( ()<ESC>i
+ inoremap ) <c-r>=ClosePair(')')<CR>
+ " inoremap { {<CR>}<ESC>O
+ inoremap { {}<ESC>i
+ inoremap } <c-r>=ClosePair('}')<CR>
+ inoremap [ []<ESC>i
+ inoremap ] <c-r>=ClosePair(']')<CR>
+ inoremap " ""<ESC>i
+ inoremap ' ''<ESC>i
 
 function! ClosePair(char)
     if getline('.')[col('.') - 1] == a:char

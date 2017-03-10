@@ -19,6 +19,8 @@ au FileType python map <buffer> <leader>C ?class
 au FileType python map <buffer> <leader>D ?def 
 
 
+au FileType vim map <buffer> " "
+
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
