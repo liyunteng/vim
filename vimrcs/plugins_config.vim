@@ -8,8 +8,10 @@
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
-call pathogen#infect('~/.vim_runtime/sources_forked/{}')
-call pathogen#infect('~/.vim_runtime/sources_non_forked/{}')
+let s:vim_runtime = expand('<sfile>:p:h')."/.."
+call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
+call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
+call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 call pathogen#helptags()
 
 """"""""""""""""""""""""""""""
@@ -30,35 +32,25 @@ map <leader>f :MRU<CR>
 
 
 """"""""""""""""""""""""""""""
-" => YankRing
+" => YankStack
 """"""""""""""""""""""""""""""
-if has("win16") || has("win32")
-" Don't do anything
-else
-let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
-endif
-noremap <silent> <leader>y :YRGetElem<cr>
+let g:yankstack_yank_keys = ['y', 'd']
+
+nmap <c-p> <Plug>yankstack_substitute_older_paste
+nmap <c-n> <Plug>yankstack_substitute_newer_paste
+
 
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
-"let g:ctrlp_map = '<c-a>'
-let g:ctrlp_cmd = 'CtrlP'
-map <leader>j :CtrlP<cr>
-map <leader>F :CtrlPCurFile<cr>
-"map <c-b> :CtrlPBuffer<cr>
-
 let g:ctrlp_working_path_mode = 0
+
+let g:ctrlp_map = '<c-f>'
+map <leader>j :CtrlP<cr>
+map <c-b> :CtrlPBuffer<cr>
+
 let g:ctrlp_max_height = 20
-let g:ctrlp_match_window_bottom = 1
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_mruf_max = 50
-let g:ctrlp_follow_symlinks = 1
-"let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
-let g:ctrlp_custom_ignore = {
-        \ 'dir': '\v[\/]\.(git|hg|svn|rvm)$',
-        \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-        \ }
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""
@@ -89,10 +81,9 @@ let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
-map <silent> <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark
-map <silent><leader>nf :NERDTreeFind<cr>
-map <silent><leader>nd :NERDTreeCWD<cr>
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,17 +94,39 @@ let g:multi_cursor_next_key="\<C-s>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => surround.vim config
-" Annotate strings with gettext http://amix.dk/blog/post/19678
+" Annotate strings with gettext 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-airline config (force color)
+" => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme="luna"
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+      \   'right': [ [ 'lineinfo' ], ['percent'] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': ' ', 'right': ' ' },
+      \ 'subseparator': { 'left': ' ', 'right': ' ' }
+      \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
@@ -133,27 +146,13 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Python
-let g:syntastic_python_checkers=['pyflakes']
+let g:ale_linters = {
+\   'javascript': ['jshint'],
+\   'python': ['flake8'],
+\   'go': ['go', 'golint', 'errcheck']
+\}
 
-" Javascript
-let g:syntastic_javascript_checkers = ['jshint']
-
-" Go
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
-
-" Custom CoffeeScript SyntasticCheck
-func! SyntasticCheckCoffeescript()
-let l:filename = substitute(expand("%:p"), '\(\w\+\)\.coffee', '.coffee.\1.js', '')
-execute "tabedit " . l:filename
-execute "SyntasticCheck"
-execute "Errors"
-endfunc
-" nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
-" nnoremap <silent> <leader>ch :call SyntasticLoclistHide()<cr>
-nnoremap <silent> <leader>cc :call SyntasticCheck()<cr>
-nnoremap <silent> <leader>ch :call SyntasticReset()<cr>
+nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,37 +160,3 @@ nnoremap <silent> <leader>ch :call SyntasticReset()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
-nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
-nnoremap <silent> <leader>dp :GitGutterPrevHunk<cr>
-nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Commentray (Commentray)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nmap <silent> cc :Commentary<cr>
-noremap <silent> gc :Commentary<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Taglist (Taglist)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-let g:Tlist_Show_One_File = 1            " 不同时显示多个文件的tag，只显示当前文件的
-let g:Tlist_Exit_OnlyWindow = 1          " 如果taglist窗口是最后一个窗口，则退出vim
-let g:Tlist_Use_Left_Window = 1         " 在右侧窗口中显示taglist窗口
-let g:Tlist_File_Fold_Auto_Close=1       " 自动折叠当前非编辑文件的方法列表
-let g:Tlist_Auto_Open = 0
-let g:Tlist_Close_On_Select=0
-let g:Tlist_Auto_Update = 1
-let g:Tlist_Hightlight_Tag_On_BufEnter = 1
-let g:Tlist_Enable_Fold_Column = 0
-let g:Tlist_Process_File_Always = 1
-let g:Tlist_Display_Prototype = 0
-let g:Tlist_Compact_Format = 1
-let g:Tlist_Max_Submenu_Items=100
-let g:Tlist_Max_Tag_Length=100
-let g:Tlist_GainFocus_On_ToggleOpen=1
-let g:Tlist_WinHeight=100
-let g:Tlist_WinWidth=25
-nnoremap <silent><F4> :TlistToggle<CR>
