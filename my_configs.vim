@@ -27,12 +27,12 @@ au TabLeave * let g:lasttab = tabpagenr()
 map <leader>nd :NERDTreeCWD<cr>
 
 " YankRing
-"if has("win16") || has("win32")
-"" Don't do anything
-"else
-"let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
-"endif
-"noremap <leader>y :YRGetElem<cr>
+if has("win16") || has("win32")
+" Don't do anything
+else
+let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
+endif
+noremap <leader>y :YRGetElem<cr>
 
 " gitgutter
 nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
