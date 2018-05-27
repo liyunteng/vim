@@ -3,6 +3,9 @@
 
 set viminfo^=%
 
+" scrolloff
+set scrolloff=1
+
 " don't hid
 set nohidden
 
