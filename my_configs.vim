@@ -39,6 +39,12 @@ nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
 nnoremap <silent> <leader>dp :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
 
+" CRTL-P
+let g:ctrlp_map = '<c-p>'
+map <c-b> :CtrlPBuffer<cr>
+unmap <C-B>
+"map <leader>b :CtrlPBuffer<cr>
+
 " insert <>
 vnoremap $t <esc>`>a<<esc>`<i><esc>
 inoremap $t <><esc>i
