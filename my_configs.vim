@@ -1,6 +1,9 @@
 " line num
 "set nu
 
+" encoding
+set fileencodings=utf-8,utf-16,gb2312,gb18030,gbk,big5,ucs-bom,cp936,latin1
+
 set viminfo^=%
 
 " scrolloff
