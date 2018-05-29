@@ -5,7 +5,17 @@
 set fileencodings=utf-8,utf-16,gb2312,gb18030,gbk,big5,ucs-bom,cp936,latin1
 set enc=utf8
 
+" viminfo file
 set viminfo^=%
+
+" fold
+"set foldenable
+"set foldcolumn=2
+"set foldmethod=indent
+"set foldopen=all
+"set foldclose=all
+set foldlevel=5
+set foldmethod=syntax
 
 " scrolloff
 set scrolloff=1
