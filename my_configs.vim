@@ -14,7 +14,8 @@ set viminfo^=%
 " set foldmethod=indent
 " set foldopen=all
 " set foldclose=all
-set foldlevel=5
+set nofoldenable
+set foldlevel=2
 set foldmethod=syntax
 
 " scrolloff
