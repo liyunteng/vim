@@ -9,11 +9,11 @@ set enc=utf8
 set viminfo^=%
 
 " fold
-"set foldenable
-"set foldcolumn=2
-"set foldmethod=indent
-"set foldopen=all
-"set foldclose=all
+" set foldenable
+" set foldcolumn=2
+" set foldmethod=indent
+" set foldopen=all
+" set foldclose=all
 set foldlevel=5
 set foldmethod=syntax
 
@@ -24,11 +24,21 @@ set scrolloff=1
 set nohidden
 
 " line highlight
-"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-"hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
-"hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
+" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorLine   cterm=NONE ctermbg=23
 set cursorline
+
+" don't auto add comment beginning
+" set paste
+augroup Format-Options
+    autocmd!
+    autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+    " This can be done as well instead of the previous line, for setting formatoptions as you choose:
+    autocmd BufEnter * setlocal formatoptions=crqn2l1j
+augroup END
 
 
 " Split window
@@ -40,14 +50,14 @@ nmap <leader>td :tabclose<cr>
 nmap <leader>tt :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
-"NERDTree
+" NERDTree
 map <leader>nd :NERDTreeCWD<cr>
 
 " YankRing
 if has("win16") || has("win32")
-" Don't do anything
+    " Don't do anything
 else
-let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
+    let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
 endif
 noremap <leader>y :YRGetElem<cr>
 
@@ -60,11 +70,22 @@ nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
 let g:ctrlp_map = '<c-p>'
 map <c-b> :CtrlPBuffer<cr>
 unmap <C-B>
-"map <leader>b :CtrlPBuffer<cr>
+" map <leader>b :CtrlPBuffer<cr>
 
-" insert <>
-vnoremap $t <esc>`>a<<esc>`<i><esc>
-inoremap $t <><esc>i
+" don't use $ for insert pair
+" vunmap $1 
+vunmap $2
+vunmap $3
+vunmap $$
+vunmap $q
+" vunmap $e 
+
+iunmap $1
+iunmap $2
+iunmap $3
+iunmap $4
+iunmap $q
+iunmap $e
 
 " 设置使用的ctags
 set tags=${MY_KERNEL}/tags,/usr/include/tags
