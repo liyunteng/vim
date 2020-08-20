@@ -79,19 +79,20 @@ unmap <C-B>
 " map <leader>b :CtrlPBuffer<cr>
 
 " don't use $ for insert pair
-" vunmap $1 
-vunmap $2
-vunmap $3
-vunmap $$
-vunmap $q
-" vunmap $e 
+vnoremap $1 $1
+vnoremap $2 $2
+vnoremap $3 $3
+vnoremap $$ $$
+vnoremap $q $q
+vnoremap $e $e
 
-iunmap $1
-iunmap $2
-iunmap $3
-iunmap $4
-iunmap $q
-iunmap $e
+inoremap $1 $1
+inoremap $2 $2
+inoremap $3 $3
+inoremap $4 $4
+inoremap $q $q
+inoremap $e $e
+
 
 " 设置使用的ctags
 set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags
