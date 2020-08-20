@@ -24,6 +24,11 @@ set scrolloff=1
 " don't hid
 set nohidden
 
+
+set bg=light
+set bg=dark
+colorscheme peaksea
+
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 " hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
@@ -89,7 +94,7 @@ iunmap $q
 iunmap $e
 
 " 设置使用的ctags
-set tags=${MY_KERNEL}/tags,/usr/include/tags
+set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags
 
 
 " F5编译和运行C程序，F6编译和运行C++程序
