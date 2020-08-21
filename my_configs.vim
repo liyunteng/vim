@@ -27,10 +27,6 @@ set nohidden
 " don't auto add comment beginning
 " set paste
 
-set bg=light
-set bg=dark
-colorscheme peaksea
-
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 hi CursorLine   cterm=NONE ctermbg=23
