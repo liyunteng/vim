@@ -58,11 +58,12 @@ vim-ruby https://github.com/vim-ruby/vim-ruby
 typescript-vim https://github.com/leafgarland/typescript-vim
 vim-javascript https://github.com/pangloss/vim-javascript
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
-vim-go https://github.com/fatih/vim-go
 vim-markdown https://github.com/tpope/vim-markdown
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 YankRing.vim https://github.com/vim-scripts/YankRing.vim
 """.strip()
+
+# vim-go https://github.com/fatih/vim-go
 
 GITHUB_ZIP = '%s/archive/master.zip'
 
