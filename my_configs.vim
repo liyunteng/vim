@@ -24,6 +24,8 @@ set scrolloff=1
 " don't hid
 set nohidden
 
+" don't auto add comment beginning
+" set paste
 
 set bg=light
 set bg=dark
@@ -31,25 +33,9 @@ colorscheme peaksea
 
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-" hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
-" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorLine   cterm=NONE ctermbg=23
 set cursorline
 
-" don't auto add comment beginning
-" set paste
-augroup Format-Options
-    autocmd!
-    autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-    " This can be done as well instead of the previous line, for setting formatoptions as you choose:
-    autocmd BufEnter * setlocal formatoptions=crqn2l1j
-augroup END
-
-
-" Split window
-nmap <leader>\ :vsp<cr>
-nmap <leader>- :sp<cr>
 
 " tab
 nmap <leader>td :tabclose<cr>
@@ -72,11 +58,20 @@ nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
 nnoremap <silent> <leader>dp :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
 
-" CRTL-P
+" MRU
+map <leader>f :MRU<CR>
+
+" CTRL-P
 let g:ctrlp_map = '<c-p>'
-map <c-b> :CtrlPBuffer<cr>
-unmap <C-B>
 " map <leader>b :CtrlPBuffer<cr>
+
+" PageUp PageDown
+map <C-f> <PageDown>
+map <C-b> <PageUp>
+
+" split window
+nmap <leader>\ :vsp<cr>
+nmap <leader>- :sp<cr>
 
 " don't use $ for insert pair
 vnoremap $1 $1
@@ -93,32 +88,15 @@ inoremap $4 $4
 inoremap $q $q
 inoremap $e $e
 
+augroup Format-Options
+    autocmd!
+    autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+    " This can be done as well instead of the previous line, for setting formatoptions as you choose:
+    autocmd BufEnter * setlocal formatoptions=crqn2l1j
+augroup END
+
 
 " 设置使用的ctags
 set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags
 
-
-" F5编译和运行C程序，F6编译和运行C++程序
-" 请注意，下述代码在windows下使用会报错
-" 需要去掉./这两个字符
-" C的编译和运行
-"map <F5> :call CompileRunGcc()<CR>
-" func! CompileRunGcc()
-"         exec "w"
-"         exec "!gcc % -o %<"
-"         exec "! ./%<"
-" endfunc
-" C++的编译和运行
-"map <F6> :call CompileRunGpp()<CR>
-"func! CompileRunGpp()
-"        exec "w"
-"        exec "!g++ % -o %<"
-"        exec "! ./%<"
-"endfunc
-""python 的运行
-"map <F9> :call PythonRun()<CR>
-"func! PythonRun()
-"        exec "w"
-"        exec "!python %"
-"endfunc
-"
