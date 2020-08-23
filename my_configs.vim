@@ -32,7 +32,6 @@ set nohidden
 hi CursorLine   cterm=NONE ctermbg=23
 set cursorline
 
-
 " tab
 nmap <leader>td :tabclose<cr>
 nmap <leader>tt :exe "tabn ".g:lasttab<cr>
@@ -59,6 +58,7 @@ map <leader>f :MRU<CR>
 
 " CTRL-P
 let g:ctrlp_map = '<c-p>'
+map <leader>b <Nop>
 " map <leader>b :CtrlPBuffer<cr>
 
 " PageUp PageDown

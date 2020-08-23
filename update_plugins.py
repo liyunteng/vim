@@ -61,6 +61,7 @@ vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 vim-markdown https://github.com/tpope/vim-markdown
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 YankRing.vim https://github.com/vim-scripts/YankRing.vim
+editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 """.strip()
 
 # vim-go https://github.com/fatih/vim-go
