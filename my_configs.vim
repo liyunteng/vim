@@ -84,6 +84,8 @@ inoremap $4 $4
 inoremap $q $q
 inoremap $e $e
 
+
+
 augroup Format-Options
     autocmd!
     autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -116,6 +118,10 @@ let g:lightline = {
       \ 'subseparator': { 'left': ' ', 'right': '|' }
       \ }
 
+
+" Commentry format
+set commentstring=#%s
+au FileType cpp set commentstring=//%s
 
 " 设置使用的ctags
 set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags
