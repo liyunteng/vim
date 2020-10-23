@@ -128,10 +128,11 @@ au FileType c set commentstring=//%s
 set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags,/data1/liyunteng/b0_sys/tags
 
 
-call plug#begin('~/.vim_runtime/plugged')
+" call plug#begin('~/.vim_runtime/my_plugins')
 " Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" call plug#end()
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
