@@ -59,11 +59,10 @@ typescript-vim https://github.com/leafgarland/typescript-vim
 vim-javascript https://github.com/pangloss/vim-javascript
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 vim-markdown https://github.com/tpope/vim-markdown
-snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 YankRing.vim https://github.com/vim-scripts/YankRing.vim
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 """.strip()
-
+# snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 # vim-go https://github.com/fatih/vim-go
 
 GITHUB_ZIP = '%s/archive/master.zip'
