@@ -27,9 +27,17 @@ set nohidden
 " don't auto add comment beginning
 " set paste
 
+" Colorscheme
+set background=dark
+colorscheme peaksea
+
+" if has("gui_running")
+" colorscheme gruvbox
+" endif
+
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorLine   cterm=NONE ctermbg=23
+hi CursorLine   term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=reverse guibg=#333333
 set cursorline
 
 " tab
