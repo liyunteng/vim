@@ -40,6 +40,9 @@ colorscheme peaksea
 hi CursorLine   term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=reverse guibg=#333333
 set cursorline
 
+" reload
+map <leader>r :source ~/.vimrc<cr>
+
 " tab
 nmap <leader>td :tabclose<cr>
 nmap <leader>tt :exe "tabn ".g:lasttab<cr>
