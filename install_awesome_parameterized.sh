@@ -13,7 +13,9 @@ source $1/vimrcs/extended.vim
 
 try
 source $1/my_configs.vim
+if version >= 8.0.1
 source $1/my_coc.vim
+endif
 catch
 endtry"
 
