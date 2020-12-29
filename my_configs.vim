@@ -38,7 +38,7 @@ colorscheme peaksea
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 if has("gui_running")
-    hi CursorLine   term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=reverse guibg=#333333
+    hi CursorLine   term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=NONE guibg=#333333
 else
     hi CursorLine   term=NONE cterm=NONE ctermbg=239
 endif
