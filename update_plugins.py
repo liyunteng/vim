@@ -33,7 +33,6 @@ vim-colors-solarized https://github.com/altercation/vim-colors-solarized
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
 vim-pyte https://github.com/therubymug/vim-pyte
-vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 vim-surround https://github.com/tpope/vim-surround
 vim-expand-region https://github.com/terryma/vim-expand-region
@@ -62,6 +61,8 @@ vim-markdown https://github.com/tpope/vim-markdown
 YankRing.vim https://github.com/vim-scripts/YankRing.vim
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 """.strip()
+
+# vim-snipmate https://github.com/garbas/vim-snipmate
 # snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 # vim-go https://github.com/fatih/vim-go
 
