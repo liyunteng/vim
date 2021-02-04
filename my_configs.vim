@@ -139,5 +139,5 @@ au FileType cpp set commentstring=//%s
 au FileType c set commentstring=//%s
 
 " 设置使用的ctags
-set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags,/data1/liyunteng/b0_sys/tags
+set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags,/data1/liyunteng/b0_sys/tags,/Users/lyt/git/webrtc-source/webrtc/src/tags
 
