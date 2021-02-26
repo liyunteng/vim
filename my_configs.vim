@@ -2,7 +2,7 @@
 "set nu
 
 " encoding
-set fileencodings=utf-8,gb2312,gb18030,gbk,big5,cp936,latin1,iso-8859-2,ucs-bom,utf-16
+set fileencodings=ucs-bom,utf-8,utf-16,gb2312,gb18030,gbk,big5,cp936,iso-8859-2,latin1
 set enc=utf8
 
 " viminfo file
