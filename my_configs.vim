@@ -79,6 +79,10 @@ nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
 nnoremap <silent> <leader>ds :GitGutterStageHunk<cr>
 nnoremap <silent> <leader>dh :GitGutterLineHighlightsToggle<cr>
 
+" ale
+nnoremap <silent> <leader>d :ALEGoToDefinition<cr>
+nnoremap <silent> <leader>u :ALEHover<cr>
+
 " MRU
 map <leader>f :MRU<CR>
 
