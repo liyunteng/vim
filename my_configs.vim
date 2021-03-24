@@ -64,9 +64,20 @@ endif
 noremap <leader>y :YRGetElem<cr>
 
 " gitgutter
-nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
+let g:gitgutter_enabled=0
+let g:gitgutter_map_keys=0
+let g:gitgutter_highlight_lines=1
+let g:gitgutter_set_sign_backgrounds=1
+let g:gitgutter_show_msg_on_hunk_jumping=1
+autocmd BufWritePost * GitGutter
+nnoremap <silent> <leader>dt :GitGutterToggle<cr>
 nnoremap <silent> <leader>dp :GitGutterPrevHunk<cr>
+nnoremap <silent> <leader>d[ :GitGutterPrevHunk<cr>
+nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
+nnoremap <silent> <leader>d] :GitGutterNextHunk<cr>
 nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
+nnoremap <silent> <leader>ds :GitGutterStageHunk<cr>
+nnoremap <silent> <leader>dh :GitGutterLineHighlightsToggle<cr>
 
 " MRU
 map <leader>f :MRU<CR>
@@ -132,6 +143,8 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': '|' }
       \ }
+
+lightline#update()
 
 " Commentry format
 set commentstring=#%s
