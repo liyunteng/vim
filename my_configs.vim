@@ -147,8 +147,7 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': '|' }
       \ }
-
-lightline#update()
+call lightline#init()
 
 " Commentry format
 set commentstring=#%s
