@@ -115,7 +115,6 @@ inoremap $q $q
 inoremap $e $e
 
 
-
 augroup Format-Options
     autocmd!
     autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -123,6 +122,14 @@ augroup Format-Options
     " This can be done as well instead of the previous line, for setting formatoptions as you choose:
     autocmd BufEnter * setlocal formatoptions=crqn2l1j
 augroup END
+
+" Commentry format
+set commentstring=#%s
+au FileType cpp set commentstring=//%s
+au FileType c set commentstring=//%s
+
+" 设置使用的ctags
+set tags=${MY_KERNEL}/tags,/usr/include/tags,${ADDX_ROOT}/tags,/Users/lyt/git/webrtc-source/webrtc/src/tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
@@ -149,11 +156,4 @@ let g:lightline = {
       \ }
 call lightline#init()
 
-" Commentry format
-set commentstring=#%s
-au FileType cpp set commentstring=//%s
-au FileType c set commentstring=//%s
-
-" 设置使用的ctags
-set tags=${MY_KERNEL}/tags,/usr/include/tags,/data1/liyunteng/g1_sys/tags,/data1/liyunteng/b0_sys/tags,/Users/lyt/git/webrtc-source/webrtc/src/tags
 
