@@ -15,56 +15,56 @@ from os import path
 
 # --- Globals ----------------------------------------------
 PLUGINS = """
-auto-pairs https://github.com/jiangmiao/auto-pairs
-ale https://github.com/w0rp/ale
-vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
-ack.vim https://github.com/mileszs/ack.vim
-bufexplorer https://github.com/jlanzarotta/bufexplorer
-ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
-mayansmoke https://github.com/vim-scripts/mayansmoke
-nerdtree https://github.com/scrooloose/nerdtree
-nginx.vim https://github.com/chr4/nginx.vim
-open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
-tlib https://github.com/vim-scripts/tlib
-vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
-vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
-vim-coffee-script https://github.com/kchmck/vim-coffee-script
-vim-colors-solarized https://github.com/altercation/vim-colors-solarized
-vim-indent-object https://github.com/michaeljsmith/vim-indent-object
-vim-less https://github.com/groenewege/vim-less
-vim-pyte https://github.com/therubymug/vim-pyte
-vim-snippets https://github.com/honza/vim-snippets
-vim-surround https://github.com/tpope/vim-surround
-vim-expand-region https://github.com/terryma/vim-expand-region
-vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
-vim-fugitive https://github.com/tpope/vim-fugitive
-goyo.vim https://github.com/junegunn/goyo.vim
-vim-zenroom2 https://github.com/amix/vim-zenroom2
-vim-repeat https://github.com/tpope/vim-repeat
-vim-commentary https://github.com/tpope/vim-commentary
-vim-gitgutter https://github.com/airblade/vim-gitgutter
-gruvbox https://github.com/morhetz/gruvbox
-vim-flake8 https://github.com/nvie/vim-flake8
-vim-pug https://github.com/digitaltoad/vim-pug
-lightline.vim https://github.com/itchyny/lightline.vim
-lightline-ale https://github.com/maximbaz/lightline-ale
-vim-abolish https://github.com/tpope/tpope-vim-abolish
-rust.vim https://github.com/rust-lang/rust.vim
-vim-markdown https://github.com/plasticboy/vim-markdown
-vim-gist https://github.com/mattn/vim-gist
-vim-ruby https://github.com/vim-ruby/vim-ruby
-typescript-vim https://github.com/leafgarland/typescript-vim
-vim-javascript https://github.com/pangloss/vim-javascript
-vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
-mru.vim https://github.com/vim-scripts/mru.vim
-vim-markdown https://github.com/tpope/vim-markdown
-YankRing.vim https://github.com/vim-scripts/YankRing.vim
-editorconfig-vim https://github.com/editorconfig/editorconfig-vim
+auto-pairs https://hub.fastgit.org/jiangmiao/auto-pairs
+ale https://hub.fastgit.org/w0rp/ale
+vim-yankstack https://hub.fastgit.org/maxbrunsfeld/vim-yankstack
+ack.vim https://hub.fastgit.org/mileszs/ack.vim
+bufexplorer https://hub.fastgit.org/jlanzarotta/bufexplorer
+ctrlp.vim https://hub.fastgit.org/ctrlpvim/ctrlp.vim
+mayansmoke https://hub.fastgit.org/vim-scripts/mayansmoke
+nerdtree https://hub.fastgit.org/scrooloose/nerdtree
+nginx.vim https://hub.fastgit.org/chr4/nginx.vim
+open_file_under_cursor.vim https://hub.fastgit.org/amix/open_file_under_cursor.vim
+tlib https://hub.fastgit.org/vim-scripts/tlib
+vim-addon-mw-utils https://hub.fastgit.org/MarcWeber/vim-addon-mw-utils
+vim-bundle-mako https://hub.fastgit.org/sophacles/vim-bundle-mako
+vim-coffee-script https://hub.fastgit.org/kchmck/vim-coffee-script
+vim-colors-solarized https://hub.fastgit.org/altercation/vim-colors-solarized
+vim-indent-object https://hub.fastgit.org/michaeljsmith/vim-indent-object
+vim-less https://hub.fastgit.org/groenewege/vim-less
+vim-pyte https://hub.fastgit.org/therubymug/vim-pyte
+vim-snippets https://hub.fastgit.org/honza/vim-snippets
+vim-surround https://hub.fastgit.org/tpope/vim-surround
+vim-expand-region https://hub.fastgit.org/terryma/vim-expand-region
+vim-multiple-cursors https://hub.fastgit.org/terryma/vim-multiple-cursors
+vim-fugitive https://hub.fastgit.org/tpope/vim-fugitive
+goyo.vim https://hub.fastgit.org/junegunn/goyo.vim
+vim-zenroom2 https://hub.fastgit.org/amix/vim-zenroom2
+vim-repeat https://hub.fastgit.org/tpope/vim-repeat
+vim-commentary https://hub.fastgit.org/tpope/vim-commentary
+vim-gitgutter https://hub.fastgit.org/airblade/vim-gitgutter
+gruvbox https://hub.fastgit.org/morhetz/gruvbox
+vim-flake8 https://hub.fastgit.org/nvie/vim-flake8
+vim-pug https://hub.fastgit.org/digitaltoad/vim-pug
+lightline.vim https://hub.fastgit.org/itchyny/lightline.vim
+lightline-ale https://hub.fastgit.org/maximbaz/lightline-ale
+vim-abolish https://hub.fastgit.org/tpope/tpope-vim-abolish
+rust.vim https://hub.fastgit.org/rust-lang/rust.vim
+vim-markdown https://hub.fastgit.org/plasticboy/vim-markdown
+vim-gist https://hub.fastgit.org/mattn/vim-gist
+vim-ruby https://hub.fastgit.org/vim-ruby/vim-ruby
+typescript-vim https://hub.fastgit.org/leafgarland/typescript-vim
+vim-javascript https://hub.fastgit.org/pangloss/vim-javascript
+vim-python-pep8-indent https://hub.fastgit.org/Vimjas/vim-python-pep8-indent
+mru.vim https://hub.fastgit.org/vim-scripts/mru.vim
+vim-markdown https://hub.fastgit.org/tpope/vim-markdown
+YankRing.vim https://hub.fastgit.org/vim-scripts/YankRing.vim
+editorconfig-vim https://hub.fastgit.org/editorconfig/editorconfig-vim
 """.strip()
 
-# vim-snipmate https://github.com/garbas/vim-snipmate
-# snipmate-snippets https://github.com/scrooloose/snipmate-snippets
-# vim-go https://github.com/fatih/vim-go
+# vim-snipmate https://hub.fastgit.org/garbas/vim-snipmate
+# snipmate-snippets https://hub.fastgit.org/scrooloose/snipmate-snippets
+# vim-go https://hub.fastgit.org/fatih/vim-go
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
