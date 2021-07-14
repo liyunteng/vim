@@ -16,6 +16,13 @@ catch
 endtry
 
 source $1/my_configs.vim
+
+if has('patch-8.0.1453')
+    if !has('patch-8.1.1719')
+        let g:coc_disable_startup_warning = 1
+    endif
+    source $1/my_coc.vim
+endif
 "
 
 if [ "$2" = "--all" ]; then

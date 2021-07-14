@@ -157,9 +157,4 @@ let g:lightline = {
 call lightline#init()
 
 
-if has('patch-8.0.1453')
-    if !has('patch-8.1.1719')
-        let g:coc_disable_startup_warning = 1
-    endif
-    source /home/debian/.vim_runtime/my_coc.vim
-endif
+
