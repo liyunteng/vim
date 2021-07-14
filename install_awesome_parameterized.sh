@@ -12,9 +12,6 @@ source $1/vimrcs/plugins_config.vim
 source $1/vimrcs/extended.vim
 
 try
-if version >= 8.0.1
-source $1/my_coc.vim
-endif
 catch
 endtry
 
