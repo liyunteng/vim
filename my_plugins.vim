@@ -53,7 +53,7 @@ if has('patch-8.0.1453')
     if !has('patch-8.1.1719')
         let g:coc_disable_startup_warning = 1
     endif
-    source /Users/lyt/.vim_runtime/my_coc.vim
+    source ~/.vim_runtime/my_coc.vim
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
