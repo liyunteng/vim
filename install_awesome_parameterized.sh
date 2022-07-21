@@ -15,7 +15,6 @@ try
 catch
 endtry
 
-source $1/my_plugins.vim
 source $1/my_configs.vim
 "
 

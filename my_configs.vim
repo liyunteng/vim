@@ -130,3 +130,38 @@ au FileType c set commentstring=//%s
 
 " 设置使用的ctags
 set tags=${MY_KERNEL}/tags,/usr/include/tags,${ADDX_ROOT}/tags,/Users/lyt/git/webrtc-source/webrtc/src/tags
+
+
+" Coc
+if has('patch-8.0.1453')
+    if !has('patch-8.1.1719')
+        let g:coc_disable_startup_warning = 1
+    endif
+    source ~/.vim_runtime/my_coc.vim
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lightline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+      \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ]]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+      \ },
+      \ 'separator': { 'left': ' ', 'right': ' ' },
+      \ 'subseparator': { 'left': ' ', 'right': '|' }
+      \ }
+
+" call lightline#init()
