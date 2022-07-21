@@ -23,7 +23,6 @@ ale https://github.com/w0rp/ale
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/jlanzarotta/bufexplorer
-ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/scrooloose/nerdtree
 nginx.vim https://github.com/chr4/nginx.vim
@@ -65,6 +64,7 @@ YankRing.vim https://github.com/vim-scripts/YankRing.vim
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 """.strip()
 
+# ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 # vim-snipmate https://github.com/garbas/vim-snipmate
 # snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 # vim-go https://github.com/fatih/vim-go
