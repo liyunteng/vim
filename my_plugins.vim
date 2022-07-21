@@ -37,7 +37,6 @@ Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/w0rp/ale'
 Plug 'https://github.com/maximbaz/lightline-ale'
 Plug 'https://github.com/mileszs/ack.vim'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/vim-scripts/mayansmoke'
 Plug 'https://github.com/vim-scripts/tlib'
 Plug 'https://github.com/MarcWeber/vim-addon-mw-utils'
@@ -50,8 +49,9 @@ Plug 'https://github.com/therubymug/vim-pyte'
 " Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
+" Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 " Plug 'https://github.com/plasticboy/vim-markdown'
 call plug#end()
 
 
-:PlugInstall
+" :PlugInstall
