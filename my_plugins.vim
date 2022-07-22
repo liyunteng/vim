@@ -47,7 +47,9 @@ Plug 'https://github.com/groenewege/vim-less'
 Plug 'https://github.com/therubymug/vim-pyte'
 
 " Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
+if has('patch-8.0.1453')
 Plug 'https://github.com/neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+endif
 
 " Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 " Plug 'https://github.com/plasticboy/vim-markdown'
