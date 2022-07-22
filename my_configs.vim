@@ -45,15 +45,15 @@ endif
 set cursorline
 
 " reload
-map <leader>r :source ~/.vimrc<cr>
+" map <silent> <leader>r :source ~/.vimrc<cr>
 
 " tab
-nmap <leader>td :tabclose<cr>
-nmap <leader>tt :exe "tabn ".g:lasttab<cr>
+nmap <silent> <leader>td :tabclose<cr>
+nmap <silent> <leader>tt :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " NERDTree
-map <leader>nd :NERDTreeCWD<cr>
+map <silent> <leader>nd :NERDTreeCWD<cr>
 
 " YankRing
 if has("win16") || has("win32")
@@ -61,7 +61,7 @@ if has("win16") || has("win32")
 else
     let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
 endif
-noremap <leader>y :YRGetElem<cr>
+noremap <silient> <leader>y :YRGetElem<cr>
 
 " gitgutter
 let g:gitgutter_enabled=0
@@ -84,7 +84,7 @@ nnoremap <silent> <leader>d :ALEGoToDefinition<cr>
 nnoremap <silent> <leader>u :ALEHover<cr>
 
 " MRU
-map <leader>f :MRU<CR>
+map <silent> <leader>f :MRU<CR>
 
 " CTRL-P
 let g:ctrlp_map = '<c-p>'
@@ -96,8 +96,8 @@ map <C-f> <PageDown>
 map <C-b> <PageUp>
 
 " split window
-nmap <leader>\ :vsp<cr>
-nmap <leader>- :sp<cr>
+nmap <silent> <leader>\ :vsp<cr>
+nmap <silent> <leader>- :sp<cr>
 
 " don't use $ for insert pair
 vnoremap $1 $1
