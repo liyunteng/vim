@@ -61,7 +61,7 @@ if has("win16") || has("win32")
 else
     let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
 endif
-noremap <silient> <leader>y :YRGetElem<cr>
+noremap <silent> <leader>y :YRGetElem<cr>
 
 " gitgutter
 let g:gitgutter_enabled=0
