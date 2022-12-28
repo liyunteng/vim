@@ -31,21 +31,17 @@ set nohidden
 set background=dark
 colorscheme peaksea
 
-" if has("gui_running")
+" if has("gui_running") || has("nvim")
 " colorscheme gruvbox
 " endif
 
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-if has("gui_running")
-    hi CursorLine   term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=NONE guibg=#333333
-else
-    hi CursorLine   term=NONE cterm=NONE ctermbg=239
-endif
+hi CursorLine term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=NONE guibg=#333333
 set cursorline
 
 " reload
-" map <silent> <leader>r :source ~/.vimrc<cr>
+map <silent> <leader>r :source ~/.vimrc<cr>
 
 " tab
 nmap <silent> <leader>td :tabclose<cr>
