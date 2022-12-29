@@ -13,7 +13,7 @@ set updatetime=300
 " diagnostics appear/become resolved
 " set signcolumn=yes
 
-let g:coc_config_home='~/.vim_runtime'
+let g:coc_config_home='~/.vim_runtime/cache'
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file

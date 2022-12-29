@@ -2,7 +2,9 @@
 "set nu
 
 " term
+if has("terminfo")
 set term=$TERM
+endif
 
 " encoding
 set fileencodings=ucs-bom,utf-8,gb2312,gb18030,gbk,big5,cp936,iso-8859-2,utf-16,latin1
@@ -10,7 +12,11 @@ set enc=utf8
 
 " viminfo file
 " set viminfo^=%
+if has("nvim")
+set viminfo='50,<1000,s100,:0,n~/.vim_runtime/cache/nviminfo
+else
 set viminfo='50,<1000,s100,:0,n~/.vim_runtime/cache/viminfo
+endif
 
 " fold
 " set foldenable
@@ -30,7 +36,6 @@ set nohidden
 
 " don't auto add comment beginning
 " set paste
-
 
 " Colorscheme
 set background=dark
