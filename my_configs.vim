@@ -6,7 +6,8 @@ set fileencodings=ucs-bom,utf-8,gb2312,gb18030,gbk,big5,cp936,iso-8859-2,utf-16,
 set enc=utf8
 
 " viminfo file
-set viminfo^=%
+" set viminfo^=%
+set viminfo='50,<1000,s100,:0,n~/.vim_runtime/temp_dirs/viminfo
 
 " fold
 " set foldenable
@@ -43,6 +44,8 @@ else
     hi CursorLine term=NONE cterm=NONE ctermbg=239
 endif
 set cursorline
+
+
 
 " reload
 map <silent> <leader>r :source ~/.vimrc<cr>
@@ -85,6 +88,7 @@ nnoremap <silent> <leader>d :ALEGoToDefinition<cr>
 nnoremap <silent> <leader>u :ALEHover<cr>
 
 " MRU
+let g:MRU_File=$HOME . '/.vim_runtime/temp_dirs/vim_mru_files'
 map <silent> <leader>f :MRU<CR>
 
 " CTRL-P
