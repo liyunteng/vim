@@ -1,6 +1,9 @@
 " line num
 "set nu
 
+" term
+set term=$TERM
+
 " encoding
 set fileencodings=ucs-bom,utf-8,gb2312,gb18030,gbk,big5,cp936,iso-8859-2,utf-16,latin1
 set enc=utf8
@@ -27,6 +30,7 @@ set nohidden
 
 " don't auto add comment beginning
 " set paste
+
 
 " Colorscheme
 set background=dark
