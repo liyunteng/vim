@@ -14,9 +14,9 @@ set viminfo^=%
 " set foldmethod=indent
 " set foldopen=all
 " set foldclose=all
-set nofoldenable
 set foldlevel=2
 set foldmethod=syntax
+set nofoldenable
 
 " scrolloff
 set scrolloff=1
@@ -37,7 +37,11 @@ colorscheme peaksea
 
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorLine term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=NONE guibg=#333333
+if has("gui_running")  || has("nvim")
+    hi CursorLine term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=NONE guibg=#333333
+else
+    hi CursorLine term=NONE cterm=NONE ctermbg=239
+endif
 set cursorline
 
 " reload
@@ -70,6 +74,7 @@ nnoremap <silent> <leader>dt :GitGutterToggle<cr>
 nnoremap <silent> <leader>dp :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>d[ :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>dn :GitGutterNextHunk<cr>
+
 nnoremap <silent> <leader>d] :GitGutterNextHunk<cr>
 nnoremap <silent> <leader>du :GitGutterUndoHunk<cr>
 nnoremap <silent> <leader>ds :GitGutterStageHunk<cr>
