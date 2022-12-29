@@ -1,5 +1,6 @@
 plugins/
-cache/
+cache/**
+!cache/README.md
 sources_non_forked/
 sources_non_forked/ack.vim/.netrwhist
 sources_forked/yankring/doc/tags
