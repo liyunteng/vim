@@ -101,6 +101,9 @@ map <C-f> <PageDown>
 map <C-b> <PageUp>
 
 " split window
+set splitright
+set splitbelow
+set switchbuf=vsplit
 nmap <silent> <leader>\ :vsp<cr>
 nmap <silent> <leader>- :sp<cr>
 
