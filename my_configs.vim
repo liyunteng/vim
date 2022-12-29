@@ -7,7 +7,7 @@ set enc=utf8
 
 " viminfo file
 " set viminfo^=%
-set viminfo='50,<1000,s100,:0,n~/.vim_runtime/temp_dirs/viminfo
+set viminfo='50,<1000,s100,:0,n~/.vim_runtime/cache/viminfo
 
 " fold
 " set foldenable
@@ -62,7 +62,7 @@ map <silent> <leader>nd :NERDTreeCWD<cr>
 if has("win16") || has("win32")
     " Don't do anything
 else
-    let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
+    let g:yankring_history_dir = '~/.vim_runtime/cache/'
 endif
 noremap <silent> <leader>y :YRGetElem<cr>
 
@@ -88,7 +88,7 @@ nnoremap <silent> <leader>d :ALEGoToDefinition<cr>
 nnoremap <silent> <leader>u :ALEHover<cr>
 
 " MRU
-let g:MRU_File=$HOME . '/.vim_runtime/temp_dirs/vim_mru_files'
+let g:MRU_File=$HOME . '/.vim_runtime/cache/mru'
 map <silent> <leader>f :MRU<CR>
 
 " CTRL-P
