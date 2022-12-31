@@ -173,6 +173,7 @@ let g:lightline = {
       \ }
 
 " clipboard
+if has('patch-8.0.1453') || has('nvim')
 let g:clipboard = {
           \   'name': 'myClipboard',
           \   'copy': {
@@ -184,6 +185,7 @@ let g:clipboard = {
           \      '*': {-> get(g:, 'foo', [])},
           \   },
           \ }
+endif
 
 
 source ~/.vim_runtime/my_plugins.vim
