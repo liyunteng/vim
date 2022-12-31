@@ -24,7 +24,7 @@ Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/nvie/vim-flake8'
 Plug 'https://github.com/digitaltoad/vim-pug'
 Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/tpope/tpope-vim-abolish'
+Plug 'https://github.com/tpope/tpope-vim-abolish', {'as': 'vim-abolish'}
 Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/mattn/vim-gist'
 Plug 'https://github.com/vim-ruby/vim-ruby'
@@ -36,7 +36,7 @@ Plug 'https://github.com/vim-scripts/mru.vim'
 Plug 'https://github.com/plasticboy/vim-markdown'
 Plug 'https://github.com/vim-scripts/YankRing.vim'
 Plug 'https://github.com/editorconfig/editorconfig-vim'
-Plug 'https://github.com/dracula/vim'
+Plug 'https://github.com/dracula/vim', {'as': 'dracula'}
 
 Plug 'https://github.com/dense-analysis/ale'
 Plug 'https://github.com/maximbaz/lightline-ale'
@@ -48,7 +48,7 @@ Plug 'https://github.com/kchmck/vim-coffee-script'
 Plug 'https://github.com/maxbrunsfeld/vim-yankstack'
 Plug 'https://github.com/groenewege/vim-less'
 Plug 'https://github.com/therubymug/vim-pyte'
-Plug 'https://github.com/tomtom/tlib_vim'
+Plug 'https://github.com/tomtom/tlib_vim', {'as': 'tlib'}
 
 " Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
 if has('patch-8.0.1453')
