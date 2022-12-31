@@ -1,4 +1,4 @@
-plugins/
+my_plugins/*
 cache/**
 !cache/README.md
 sources_non_forked/
