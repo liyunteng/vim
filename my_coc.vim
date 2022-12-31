@@ -86,7 +86,7 @@ endfunction
 xmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
 
-augroup mygroup
+augroup cocgroup
     autocmd!
 
     "To fix the highlight of comment, use:
@@ -99,7 +99,7 @@ augroup mygroup
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
     " Highlight the symbol and its references when holding the cursor.
-    autocmd CursorHold * call CocActionAsync('highlight')
+    autocmd CursorHold *.c,*.cc,*.cxx,*.cpp,*.hpp,*.h call CocActionAsync('highlight')
 
     " Auto Format
     " autocmd BufWritePre *.c,*.cpp,*.cxx,*.cc,*.h,*.hpp call CocAction('format')
