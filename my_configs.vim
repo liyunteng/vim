@@ -6,6 +6,9 @@ if has("terminfo")
 set term=$TERM
 endif
 
+" timeoutlen
+set timeoutlen=1000
+
 " encoding
 set fileencodings=ucs-bom,utf-8,gb2312,gb18030,gbk,big5,cp936,iso-8859-2,utf-16,latin1
 set enc=utf8
@@ -53,8 +56,6 @@ else
     hi CursorLine term=NONE cterm=NONE ctermbg=239
 endif
 set cursorline
-
-
 
 " reload
 map <silent> <leader>r :source ~/.vimrc<cr>
@@ -180,5 +181,19 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': '|' }
       \ }
+
+" clipboard
+let g:clipboard = {
+          \   'name': 'myClipboard',
+          \   'copy': {
+          \      '+': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
+          \      '*': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
+          \    },
+          \   'paste': {
+          \      '+': {-> get(g:, 'foo', [])},
+          \      '*': {-> get(g:, 'foo', [])},
+          \   },
+          \ }
+
 
 " call lightline#init()
