@@ -50,7 +50,7 @@ colorscheme peaksea
 
 " line highlight
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-if has("gui_running")  || has("nvim")
+if has("gui_running") || has("nvim")
     hi CursorLine term=NONE cterm=NONE ctermbg=239 gui=NONE guifg=NONE guibg=#333333
 else
     hi CursorLine term=NONE cterm=NONE ctermbg=239
@@ -75,14 +75,6 @@ else
     let g:yankring_history_dir = '~/.vim_runtime/cache/'
 endif
 noremap <silent> <leader>y :YRGetElem<cr>
-
-" undo
-set undofile
-if has("nvim")
-    set undodir=~/.vim_runtime/cache/undodir/nvim
-else
-    set undodir=~/.vim_runtime/cache/undodir/vim
-endif
 
 " gitgutter
 let g:gitgutter_enabled=0
@@ -140,11 +132,9 @@ inoremap $4 $4
 inoremap $q $q
 inoremap $e $e
 
-
 augroup Format-Options
     autocmd!
     autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
     " This can be done as well instead of the previous line, for setting formatoptions as you choose:
     autocmd BufEnter * setlocal formatoptions=crqn2l1j
 augroup END
@@ -154,7 +144,7 @@ set commentstring=#%s
 au FileType cpp set commentstring=//%s
 au FileType c set commentstring=//%s
 
-" 设置使用的ctags
+" ctags
 set tags=${MY_KERNEL}/tags,/usr/include/tags,${ADDX_ROOT}/tags,/Users/lyt/git/webrtc-source/webrtc/src/tags
 
 
