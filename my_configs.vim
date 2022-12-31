@@ -158,14 +158,6 @@ au FileType c set commentstring=//%s
 set tags=${MY_KERNEL}/tags,/usr/include/tags,${ADDX_ROOT}/tags,/Users/lyt/git/webrtc-source/webrtc/src/tags
 
 
-" Coc
-if has('patch-8.0.1453')
-    if !has('patch-8.1.1719')
-        let g:coc_disable_startup_warning = 1
-    endif
-    source ~/.vim_runtime/my_coc.vim
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,5 +195,13 @@ let g:clipboard = {
           \   },
           \ }
 
+
+source ~/.vim_runtime/my_plugins.vim
+if has('patch-8.0.1453')
+    if !has('patch-8.1.1719')
+        let g:coc_disable_startup_warning = 1
+    endif
+    source ~/.vim_runtime/my_coc.vim
+endif
 
 " call lightline#init()
