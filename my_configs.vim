@@ -76,6 +76,14 @@ else
 endif
 noremap <silent> <leader>y :YRGetElem<cr>
 
+" undo
+set undofile
+if has("nvim")
+    set undodir=~/.vim_runtime/cache/undodir/nvim
+else
+    set undodir=~/.vim_runtime/cache/undodir/vim
+endif
+
 " gitgutter
 let g:gitgutter_enabled=0
 let g:gitgutter_map_keys=0
