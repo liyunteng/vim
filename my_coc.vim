@@ -11,6 +11,8 @@ set updatetime=300
 " set signcolumn=yes
 
 let g:coc_config_home='~/.vim_runtime/cache'
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-snippets']
+
 " Note: use command `:verbose imap` to check current insert
 " key-mappings when your key-mappings not work.
 
@@ -86,6 +88,7 @@ endfunction
 xmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
 
+map <leader>cc :botright CocDiagnostics<cr>
 augroup cocgroup
     autocmd!
 
@@ -99,7 +102,7 @@ augroup cocgroup
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
     " Highlight the symbol and its references when holding the cursor.
-    autocmd CursorHold *.c,*.cc,*.cxx,*.cpp,*.hpp,*.h call CocActionAsync('highlight')
+    autocmd CursorHold * call CocActionAsync('highlight')
 
     " Auto Format
     " autocmd BufWritePre *.c,*.cpp,*.cxx,*.cc,*.h,*.hpp call CocAction('format')
@@ -171,6 +174,9 @@ command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR :call CocAction('organizeImport')
+
+" Add `:Fold` command to Fold the current buffer
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
