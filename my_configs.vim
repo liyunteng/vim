@@ -173,6 +173,8 @@ let g:lightline = {
       \ }
 
 " clipboard
+set clipboard+=unnamedplus
+set clipboard+=xclip
 if has('patch-8.0.1453') || has('nvim')
 let g:clipboard = {
           \   'name': 'myClipboard',
