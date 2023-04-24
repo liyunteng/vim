@@ -51,7 +51,7 @@ Plug 'https://github.com/therubymug/vim-pyte'
 Plug 'https://github.com/tomtom/tlib_vim', {'as': 'tlib'}
 
 " Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
-if has('patch-8.0.1453')
+if has('patch-8.0.1453') || has('nvim')
 " Plug 'https://github.com/neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
 endif

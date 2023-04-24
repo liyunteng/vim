@@ -174,7 +174,9 @@ let g:lightline = {
 
 " clipboard
 set clipboard+=unnamedplus
+if !has('nvim')
 set clipboard+=xclip
+endif
 if has('patch-8.0.1453') || has('nvim')
 let g:clipboard = {
           \   'name': 'myClipboard',
@@ -191,7 +193,7 @@ endif
 
 
 source ~/.vim_runtime/my_plugins.vim
-if has('patch-8.0.1453')
+if has('patch-8.0.1453') || has('nvim')
     if !has('patch-8.1.1719')
         let g:coc_disable_startup_warning = 1
     endif
